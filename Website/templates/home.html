@@ -37,6 +37,7 @@
                 cosine similarity is used. This generates a value between 0 and 1,
                 0 meaning no similarity and 1 meaning perfect match.
             </p>
+        {% block howtouseit %}
         <h2>How to use it?</h2>
             <p> Let us understand the usage with the help of an
                 example. Type in Sample 1 in box 1 and Sample 2 in box 2.
@@ -67,36 +68,33 @@
                 No need to pre-select these offers, we'll give you the points whether or not you knew about the offer. We just think it is easier that way.
             </p>
         </div>
+        {% endblock %}
 
         <!-- <img src="../static/Images/LIDAR_KITTI_DETECTION.PNG" 
         alt="alternate description here" width=400> -->
+        {% block form %}
         <div class="container">
             <form action="/send" method = "POST">
                 <div class="row">
                 
                     <div class="col">
-                        {% block text1 %}
                         <textarea  name = "Text1" class="form-control" id="Text1" rows="3"></textarea>
-                        {% endblock %}
                     </div>
                 
                     <div class="col">
-                        {% block text2 %}
                         <textarea name = "Text2" class="form-control" id="Text2" rows="3"></textarea>
-                        {% endblock %}
                     </div>
 
                 </div>
                 <br>
                 <div class="container bg-light">
                     <div class="col-md-12 text-center">
-                        <!-- <input type="submit" value="calculate" id="calc_btn" /> -->
                         <button type="submit" class="btn btn-primary">Calculate</button>
-                        <!-- <button type="button" class="btn btn-warning">Cancel</button> -->
                     </div>
                 </div>
             </form>
         </div>
+        {% endblock %}
         <br>
         {% block result %}{% endblock %}
         <!-- <div class="alert">

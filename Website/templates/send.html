@@ -1,14 +1,32 @@
 {% extends 'home.html' %}
+{% block howtouseit %} {% endblock %}
+{% block form %}
+<div class="container">
+    <form action="/" method = "POST">
+        <div class="row">
+            <div class="col">
+                {{text1}}
+            </div>
+        
+            <div class="col">
+                {{text2}}
+            </div>
+
+        </div>
+        <br>
+        <div class="container bg-light">
+            <div class="col-md-12 text-center">
+                <button type="submit" class="btn btn-primary">Return To Home</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
 {% block result %}
 <div class="alert">
     <p>
         The Entered Text have the similarity score of {{ result }}
     </p>
 </div>
-{% endblock %}
-{% block text1 %}
-{{text1}}
-{% endblock %}
-{% block text2 %}
-{{text2}}
 {% endblock %}
