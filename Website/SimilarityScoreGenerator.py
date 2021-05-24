@@ -3,6 +3,7 @@ import pandas as pd
 from numpy.linalg import norm
 import copy
 
+
 ''' Steps involved to do text Matching 
 1. Parse the document or get the text
 
@@ -30,11 +31,13 @@ class SimiliariytScoreGenerator:
         self.vec1 = []
         self.vec2 = []
         self.score = 0
-        self.stop_words = ['I','You','are','a','an','the',',','.']
+        self.stop_words = ['I','You','they','is','am','are','a','an','the',',','.','\'','in','to']
 
     def preprocess(self):
         self.doc1 = self.doc1.split(" ")
         self.doc2 = self.doc2.split(" ")
+        self.doc1 = [i for i in self.doc1 if i not in self.stop_words]
+        self.doc2 = [i for i in self.doc2 if i not in self.stop_words]
         # print(self.doc1)
         # print(self.doc2)
 
