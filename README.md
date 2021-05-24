@@ -13,7 +13,7 @@ git clone https://github.com/Abhishek-EE/Text-Similarity-Score-Generator.git
 ```
 
 ### 2. Install dependencies and Python Packages
-It is recommended to use pip
+It is recommended that you install python 3.6+ and use pip for installing the dependencies.
 ```bash
 pip install Flask numpy pandas
 ```
