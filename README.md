@@ -8,22 +8,22 @@ similarity and 1 meaning perfect match.
 #How to Use it?
 
 ### 1. Clone Code
-'''bash
+```bash
 git clone https://github.com/Abhishek-EE/Text-Similarity-Score-Generator.git
-'''
+```
 
 ### 2. Install dependencies and Python Packages
 It is recommended to use pip
-'''bash
+```bash
 pip install Flask numpy pandas
-'''
+```
 ### 3. How to run the code
 
 Open up the terminal and reach where runserver.py file is then run
 
-'''bash
+```bash
 python runserver.py
-'''
+```
 you should get a message like this
 * Serving Flask app "Website" (lazy loading)
  * Environment: production
