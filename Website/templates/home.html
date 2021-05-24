@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" 
+        rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <style>
+            .alert {
+              background: green;
+              padding: 1rem;
+              border-radius: 5px;
+              color: white;
+              margin: 1rem;
+              text-align: center;
+            }
+        </style>
+        <title>Text Similarity Score Generator</title>
+    </head>
+
+    <body>
+        <h1 style="text-align:center">Text Similarity Score Generator</h1>
+        <h2>What is it?</h2>
+        <div>
+            <p> 
+                This is a Text Similarity Score Generator. 
+                It takes in two different texts and compares
+                how similar they are.
+                To calculate the similarity score I am using 
+                <a href="https://dev.to/thormeier/algorithm-explained-text-similarity-using-a-vector-space-model-3bog">
+                Vector Space Model</a>. This model creates a vector Space
+                where each dimension represents a single word. Words
+                are taken from all the texts that are considered. One
+                document is a single vector space. Each dimension of a
+                single document vector represents how often this word
+                appears in the text. To compare two documents a 
+                cosine similarity is used. This generates a value between 0 and 1,
+                0 meaning no similarity and 1 meaning perfect match.
+            </p>
+        <h2>How to use it?</h2>
+            <p> Let us understand the usage with the help of an
+                example. Type in Sample 1 in box 1 and Sample 2 in box 2.
+                Then hit calculate and make note of the value you get in
+                the green box. Next type in the Sample1 in box 1 and Sample 3 in 
+                box 2 and hit calculate. The value you get in green box now should
+                be less than the value you got in green box previously. This 
+                shows that more similar samples have higher similarity score then 
+                less similar samples.
+            </p>
+        <h3>Sample 1</h3>
+            <p>
+                The easiest way to earn points with Fetch Rewards is to just shop for the 
+                products you already love. If you have any participating brands on your 
+                receipt, you'll get points based on the cost of the products. You don't 
+                need to clip any coupons or scan individual barcodes. Just scan each grocery receipt after you shop and we'll find the savings for you.
+            </p>
+        <h3>Sample 2</h3>
+            <p>
+                The easiest way to earn points with Fetch Rewards is to just shop for the items you already buy. 
+                If you have any eligible brands on your receipt, you will get points based on the total cost of the products. 
+                You do not need to cut out any coupons or scan individual UPCs. Just scan your receipt after you check out and we will find the savings for you.
+            </p>
+        <h3>Sample 3</h3>
+            <p>
+                We are always looking for opportunities for you to earn more points, which is why we also give you a selection of Special Offers. 
+                These Special Offers are opportunities to earn bonus points on top of the regular points you earn every time you purchase a participating brand. 
+                No need to pre-select these offers, we'll give you the points whether or not you knew about the offer. We just think it is easier that way.
+            </p>
+        </div>
+
+        <!-- <img src="../static/Images/LIDAR_KITTI_DETECTION.PNG" 
+        alt="alternate description here" width=400> -->
+        <div class="container">
+            <form action="/send" method = "POST">
+                <div class="row">
+                
+                    <div class="col">
+                        {% block text1 %}
+                        <textarea  name = "Text1" class="form-control" id="Text1" rows="3"></textarea>
+                        {% endblock %}
+                    </div>
+                
+                    <div class="col">
+                        {% block text2 %}
+                        <textarea name = "Text2" class="form-control" id="Text2" rows="3"></textarea>
+                        {% endblock %}
+                    </div>
+
+                </div>
+                <br>
+                <div class="container bg-light">
+                    <div class="col-md-12 text-center">
+                        <!-- <input type="submit" value="calculate" id="calc_btn" /> -->
+                        <button type="submit" class="btn btn-primary">Calculate</button>
+                        <!-- <button type="button" class="btn btn-warning">Cancel</button> -->
+                    </div>
+                </div>
+            </form>
+        </div>
+        <br>
+        {% block result %}{% endblock %}
+        <!-- <div class="alert">
+            <p>
+                The Entered Text have the similarity score of {{ result }}
+            </p>
+        </div> -->
+        <br>
+        <br>
+        <!-- <div class="container bg-light">
+            <div class="col-md-12 text-center">
+                <button type="button" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-warning">Cancel</button>
+            </div>
+        </div> -->
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    </body>
+</html>
